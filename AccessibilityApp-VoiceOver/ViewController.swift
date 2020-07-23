@@ -9,12 +9,24 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var backButton: UIButton!
+    @IBOutlet weak var descriptionLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        backButton.accessibilityLabel = "Back"
+        backButton.accessibilityTraits = .button
+        
+        
+        descriptionLabel.isAccessibilityElement = true
+        descriptionLabel.accessibilityTraits = .none
+        descriptionLabel.font = .preferredFont(forTextStyle: .body)
+        descriptionLabel.adjustsFontForContentSizeCategory = true
+        
+        imageView.isAccessibilityElement = true
+        imageView.accessibilityLabel = "Electrify America Charger"
+        imageView.accessibilityTraits = .image
     }
-
 
 }
 
